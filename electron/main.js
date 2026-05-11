@@ -25,9 +25,9 @@ function createWindow() {
 
   mainWindow.loadURL(startURL);
 
-  // 👉 Ativa DevTools só em dev (útil para depurar tela branca)
+  //  Ativa DevTools só em dev (útil para depurar tela branca)
   if (process.env.NODE_ENV === "development") {
-    mainWindow.webContents.openDevTools();
+     //mainWindow.webContents.openDevTools();
   }
 }
 

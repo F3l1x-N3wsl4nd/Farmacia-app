@@ -485,7 +485,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Más rentables
+                                Produtos mais vendidos
                               </NavLink>
                             </li>
                             <li>
@@ -496,7 +496,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Stock bajo cantidad
+                                Produtos nao Vendidos
                               </NavLink>
                             </li>
 
@@ -509,7 +509,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Gráfica más vendidos
+                                Gráfico mais vendidos
                               </NavLink>
                             </li>
                           
@@ -523,9 +523,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Más vendidos
+                                Mais vendidos
                               </NavLink>
                             </li>
+                            
                             <li>
                               <NavLink
                                 to="/BestCustomer"
@@ -534,7 +535,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Clientes estrellas
+                                Clientes estrelas
                               </NavLink>
                             </li>
                             <li>
@@ -545,7 +546,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                   (isActive && '!text-white')
                                 }
                               >
-                                Ventas por fecha
+                                Vendas por fechar
                               </NavLink>
                             </li>
                             <li>

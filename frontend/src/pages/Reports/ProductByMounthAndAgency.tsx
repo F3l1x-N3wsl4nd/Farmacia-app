@@ -4,12 +4,12 @@ import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 const ProductByMonthAndAgency = () => {
   return (
     <>
-      <Breadcrumb pageName="Productos" />
-
+      <Breadcrumb pageName="Produtos" /> {/* Corrigido: "Produtos" em vez de "Productos" */}
       <div className="flex flex-col gap-10">
-        <ProductByMonthAndAgencyTable /> 
+        <ProductByMonthAndAgencyTable />
       </div>
     </>
   );
 };
+
 export default ProductByMonthAndAgency;

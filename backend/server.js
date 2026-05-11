@@ -44,6 +44,7 @@ app.use("/api/funcionarios", roleRoutes);
 const PORT = process.env.PORT || 5000;
 
 /* inicia servidor */
+
 async function startServer() {
   try {
     await sequelize.sync();

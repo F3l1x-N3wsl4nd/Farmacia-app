@@ -20,18 +20,30 @@ import ProtectedRoutes from './utils/ProtectedRoutes';
 import Inventory from './pages/Inventory/Inventory';
 import ProductTransfer from './pages/Product-Transfer/ProductTransfer';
 import NewProductTransfer from './pages/Product-Transfer/NewTransfer';
+import ProductByMounthAndAgency from './pages/Reports/ProductByMounthAndAgency';
 import BestSellingProduct from './pages/Reports/BestSellingProduct';
 import LowQuantityProduct from './pages/Reports/LowQuantityProduct';
 import ProductByMonth from './pages/Reports/ProductByMounth';
 import Users from './pages/Settings/Users';
 import Roles from './pages/Settings/Roles';
 import POS from './pages/POS/POS';
+import ProductByMonthAndAgency from './pages/Reports/ProductByMounthAndAgency';
+import BestCustomer from './pages/Reports/BestCustomer';
+import HistoricalSales from './pages/Reports/HistoricalSales';
+
+
+
+
+
+
+
+
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
   
-  // CORREÇÃO: No Electron/HashRouter, usamos o pathname do react-router
+  // usei o pathname do react-router
   const isSignInPage = pathname === '/' || pathname === '/auth/signin';
   const role = localStorage.getItem('role');
 
@@ -51,7 +63,7 @@ function App() {
   if (isSignInPage) {
     return (
       <>
-        <PageTitle title="Sign in | Store Online S.A." />
+        <PageTitle title="Gestão de Stock | Farmacia" />
         <SignIn />
       </>
     );
@@ -68,7 +80,7 @@ function App() {
             element={
               role === 'admin' ? (
                 <>
-                  <PageTitle title="eCommerce Dashboard | Store Online S.A." />
+                  <PageTitle title="Gestão de Stock | Farmacia" />
                   <ECommerce />
                 </>
               ) : (
@@ -81,7 +93,7 @@ function App() {
             path="/calendar"
             element={
               <>
-                <PageTitle title="Calendar | Store Online S.A." />
+                <PageTitle title="Gestão de Stock | Farmacia" />
                 <Calendar />
               </>
             }
@@ -91,7 +103,7 @@ function App() {
             path="/profile"
             element={
               <>
-                <PageTitle title="Profile | Store Online S.A." />
+                <PageTitle title="Profile | Farmacia." />
                 <Profile />
               </>
             }
@@ -101,7 +113,7 @@ function App() {
             path="/pos"
             element={
               <>
-                <PageTitle title="POS | Store Online S.A." />
+                <PageTitle title="POS | Farmacia" />
                 <POS />
               </>
             }
@@ -111,7 +123,7 @@ function App() {
             path="/inventory"
             element={
               <>
-                <PageTitle title="Inventario | Store Online S.A." />
+                <PageTitle title="Inventario | Farmacia" />
                 <Inventory />
               </>
             }
@@ -121,7 +133,7 @@ function App() {
             path="/productTransfer"
             element={
               <>
-                <PageTitle title="Transferencias Producto | Store Online S.A." />
+                <PageTitle title="Transferencias Producto | Farmacia" />
                 <ProductTransfer />
               </>
             }
@@ -131,7 +143,7 @@ function App() {
             path="/newProductTransfer"
             element={
               <>
-                <PageTitle title="Nueva Transferencias Producto" />
+                <PageTitle title="Nova Transferencias de Productos" />
                 <NewProductTransfer/>
               </>
             }
@@ -160,10 +172,27 @@ function App() {
             path="/LowQuantityProduct"
             element={role === 'admin' ? <LowQuantityProduct /> : <Navigate to="/" />}
           />
+           
           <Route
             path="/ProductByMonth"
             element={role === 'admin' ? <ProductByMonth /> : <Navigate to="/" />}
           />
+
+          <Route
+            path="/ProductByMonthAndAgency"
+            element={role === 'admin' ? <ProductByMonthAndAgency /> : <Navigate to="/" />}
+          />
+           <Route
+            path="/BestCustomer"
+            element={role === 'admin' ? <BestCustomer /> : <Navigate to="/" />}
+          />
+
+          <Route
+            path="/HistoricalSales"
+            element={role === 'admin' ? <HistoricalSales /> : <Navigate to="/" />}
+          />
+
+
 
           {/* Outras Rotas */}
           <Route path="/chart" element={<Chart />} />
